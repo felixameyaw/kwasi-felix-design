@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felix Ameyaw Designs | Creative Excellence</title>
+<meta name="description" content="Explore premium graphic design, flyers, branding, posters and creative designs by Felix Ameyaw Designs.">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #090909;
+  color: #f8f5ed;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 24px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #29251c;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  color: #d6b46a;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: #eee;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+nav a:hover { color: #d6b46a; }
+
+.hero {
+  min-height: 490px;
+  padding: 100px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    linear-gradient(#090909d9, #090909ed),
+    radial-gradient(circle at center, #59451f, #090909 70%);
+}
+
+.eyebrow {
+  color: #d6b46a;
+  letter-spacing: 5px;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: normal;
+  line-height: 1.1;
+  max-width: 850px;
+}
+
+.hero h1 span { color: #d6b46a; }
+
+.hero p {
+  color: #bdb8ac;
+  max-width: 600px;
+  line-height: 1.8;
+  margin: 25px 0 32px;
+}
+
+.gold-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #d6b46a;
+  color: #090909;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 12px;
+  transition: .3s;
+}
+
+.gold-btn:hover {
+  background: #f0d69a;
+  transform: translateY(-3px);
+}
+
+.section {
+  padding: 85px 8%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading small {
+  color: #d6b46a;
+  letter-spacing: 4px;
+}
+
+.section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: 40px;
+  font-weight: normal;
+  margin-top: 15px;
+}
+
+.section-heading p {
+  color: #999;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.design-card {
+  background: #151515;
+  border: 1px solid #302a20;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.design-card:hover {
+  transform: translateY(-7px);
+  border-color: #d6b46a;
+}
+
+.design-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.design-info { padding: 20px; }
+
+.design-info h3 {
+  color: #d6b46a;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.design-info p {
+  color: #999;
+  font-size: 13px;
+  margin-top: 9px;
+}
+
+.about {
+  background: #111;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 750px;
+  margin: auto;
+}
+
+.about-content p {
+  color: #b5b0a5;
+  line-height: 2;
+  margin-top: 20px;
+}
+
+.contact {
+  text-align: center;
+  padding: 90px 8%;
+}
+
+.contact h2 {
+  font-family: Georgia, serif;
+  font-size: 40px;
+  font-weight: normal;
+}
+
+.contact p {
+  color: #aaa;
+  margin: 20px 0 30px;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid #29251c;
+  padding: 28px;
+  color: #888;
+  font-size: 12px;
+}
+
+footer span { color: #d6b46a; }
+
+/* Image preview */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000e;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+#lightbox img {
+  max-width: 95%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+#lightbox button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media(max-width: 800px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  header { padding: 20px 5%; }
+  nav a { margin-left: 10px; font-size: 11px; }
+}
+
+@media(max-width: 550px) {
+  .gallery { grid-template-columns: 1fr; }
+  .design-card img { height: 280px; }
+  header { flex-direction: column; gap: 18px; }
+  nav a { margin: 0 8px; }
+  .hero { min-height: 430px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">FELIX AMEYAW.</div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#gallery">DESIGNS</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="eyebrow">WELCOME TO MY CREATIVE WORLD</div>
+  <h1>Creativity Meets <span>Elegance.</span></h1>
+  <p>
+    Welcome to Felix Ameyaw Designs. Discover creative,
+    professional and extraordinary graphic designs made
+    to bring ideas to life.
+  </p>
+  <a href="#gallery" class="gold-btn">EXPLORE MY DESIGNS</a>
+</section>
+
+<section class="section" id="gallery">
+  <div class="section-heading">
+    <small>MY CREATIVE PORTFOLIO</small>
+    <h2>Selected Designs</h2>
+    <p>A collection of my creative works and visual expressions.</p>
+  </div>
+
+  <div class="gallery">
+
+    <!-- DESIGN 1: Replace design1.jpg with your actual filename -->
+    <div class="design-card">
+      <img src="design1.jpg" alt="Graphic design 1" onclick="showImage(this)">
+      <div class="design-info">
+        <h3>Creative Design 01</h3>
+        <p>Graphic Design & Visual Art</p>
+      </div>
+    </div>
+
+    <!-- DESIGN 2 -->
+    <div class="design-card">
+      <img src="design2.jpg" alt="Graphic design 2" onclick="showImage(this)">
+      <div class="design-info">
+        <h3>Creative Design 02</h3>
+        <p>Professional Design</p>
+      </div>
+    </div>
+
+    <!-- DESIGN 3 -->
+    <div class="design-card">
+      <img src="design3.png" alt="Graphic design 3" onclick="showImage(this)">
+      <div class="design-info">
+        <h3>Creative Design 03</h3>
+        <p>Visual Communication</p>
+      </div>
+    </div>
+
+    <!-- DESIGN 4 -->
+    <div class="design-card">
+      <img src="design4.jpg" alt="Graphic design 4" onclick="showImage(this)">
+      <div class="design-info">
+        <h3>Creative Design 04</h3>
+        <p>Flyer & Poster Design</p>
+      </div>
+    </div>
+
+    <!-- DESIGN 5 -->
+    <div class="design-card">
+      <img src="design5.png" alt="Graphic design 5" onclick="showImage(this)">
+      <div class="design-info">
+        <h3>Creative Design 05</h3>
+        <p>Branding & Creativity</p>
+      </div>
+    </div>
+
+    <!-- DESIGN 6 -->
+    <div class="design-card">
+      <img src="design6.jpg" alt="Graphic design 6" onclick="showImage(this)">
+      <div class="design-info">
+        <h3>Creative Design 06</h3>
+        <p>Premium Graphic Artwork</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="about-content">
+    <div class="section-heading">
+      <small>THE DESIGNER BEHIND THE BRAND</small>
+      <h2>About Felix Ameyaw</h2>
+    </div>
+    <p>
+      Felix Ameyaw Designs is a creative brand dedicated
+      to delivering attractive, professional and memorable
+      graphic design solutions. Every design is created
+      with passion, creativity and attention to detail.
+    </p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Let's Create Something Amazing.</h2>
+  <p>Have a project in mind? Get in touch and let's bring your ideas to life.</p>
+  <a href="mailto:YOUR-EMAIL@example.com" class="gold-btn">
+    CONTACT ME
+  </a>
+</section>
+
+<footer>
+  © 2026 <span>FELIX AMEYAW DESIGNS</span>. All Rights Reserved.
+</footer>
+
+<div id="lightbox" onclick="closeImage()">
+  <button onclick="closeImage()">×</button>
+  <img id="preview" src="" alt="Design preview">
+</div>
+
+<script>
+function showImage(img) {
+  document.getElementById("preview").src = img.src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeImage() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
